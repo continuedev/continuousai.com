@@ -4,7 +4,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 
 echo "┌─ 🏗️  Verifying Production Build"
 echo "│  Running 'npm run build' to ensure strict linting and type safety..."
-if npm run build
+if npm run build; then
   echo "└─ Build Successful"
 else
   echo "└─ Build Failed. Push aborted."

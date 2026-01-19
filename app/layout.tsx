@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Continuous AI",
   description: "The practice of developing software with background agents",
   icons: {
-    icon: '/favicon.svg?v=4',
+    icon: "/favicon.svg?v=4",
   },
 };
 
@@ -18,7 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
-        <link rel="alternate icon" href="/favicon.svg?v=4" type="image/svg+xml" />
+        <link
+          rel="alternate icon"
+          href="/favicon.svg?v=4"
+          type="image/svg+xml"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

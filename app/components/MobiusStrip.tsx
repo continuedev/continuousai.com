@@ -21,14 +21,14 @@ export default function MobiusStrip() {
 
     // Möbius strip parameters
     const R = 120; // Major radius (distance from center to the middle of the strip)
-    const w = 40;  // Width of the strip
+    const w = 40; // Width of the strip
 
     const drawMobiusStrip = (rotationY: number, rotationX: number) => {
       ctx.clearRect(0, 0, width, height);
 
       // Generate points for the Möbius strip
       const segments = 100; // Number of segments around the strip
-      const strips = 20;    // Number of strips across the width
+      const strips = 20; // Number of strips across the width
 
       const points: Array<{
         x: number;
@@ -42,7 +42,7 @@ export default function MobiusStrip() {
       for (let i = 0; i <= segments; i++) {
         for (let j = 0; j <= strips; j++) {
           const u = (i / segments) * Math.PI * 2; // Parameter around the circle [0, 2π]
-          const v = ((j / strips) - 0.5) * 2 * w; // Parameter across the width [-w, w]
+          const v = (j / strips - 0.5) * 2 * w; // Parameter across the width [-w, w]
 
           // Möbius strip parametric equations
           // The key is the u/2 in the twist, giving it the single twist characteristic
@@ -99,8 +99,15 @@ export default function MobiusStrip() {
           // Color based on position - rainbow gradient
           const colorIndex = Math.floor(((i / segments) * 9) % 9);
           const colors = [
-            "#F637B3", "#EB54F6", "#B25AF6", "#667AFF", "#2EA6FF",
-            "#00D2FF", "#31DDED", "#60E6D5", "#89EC9B"
+            "#F637B3",
+            "#EB54F6",
+            "#B25AF6",
+            "#667AFF",
+            "#2EA6FF",
+            "#00D2FF",
+            "#31DDED",
+            "#60E6D5",
+            "#89EC9B",
           ];
           const color = colors[colorIndex];
 
@@ -142,9 +149,18 @@ export default function MobiusStrip() {
     // Helper function to adjust brightness
     const adjustBrightness = (color: string, factor: number): string => {
       const hex = color.replace("#", "");
-      const r = Math.min(255, Math.floor(parseInt(hex.slice(0, 2), 16) * factor));
-      const g = Math.min(255, Math.floor(parseInt(hex.slice(2, 4), 16) * factor));
-      const b = Math.min(255, Math.floor(parseInt(hex.slice(4, 6), 16) * factor));
+      const r = Math.min(
+        255,
+        Math.floor(parseInt(hex.slice(0, 2), 16) * factor)
+      );
+      const g = Math.min(
+        255,
+        Math.floor(parseInt(hex.slice(2, 4), 16) * factor)
+      );
+      const b = Math.min(
+        255,
+        Math.floor(parseInt(hex.slice(4, 6), 16) * factor)
+      );
       return `rgb(${r}, ${g}, ${b})`;
     };
 
@@ -166,11 +182,6 @@ export default function MobiusStrip() {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={800}
-      height={600}
-      className="mx-auto"
-    />
+    <canvas ref={canvasRef} width={800} height={600} className="mx-auto" />
   );
 }

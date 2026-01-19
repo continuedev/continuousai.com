@@ -53,14 +53,15 @@ export default function CursorTrail() {
     // Track mouse position
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
-      
+
       // Transition between colors faster
       colorTransitionRef.current++;
-      if (colorTransitionRef.current > 15) { // Change color every 15 particles
+      if (colorTransitionRef.current > 15) {
+        // Change color every 15 particles
         colorTransitionRef.current = 0;
         colorIndexRef.current = (colorIndexRef.current + 1) % COLORS.length;
       }
-      
+
       // Create wispy, elongated particles for smoke effect
       const maxLife = Math.random() * 100 + 80; // Longer life
       particlesRef.current.push({
@@ -102,14 +103,14 @@ export default function CursorTrail() {
 
         // Get color for this particle
         const color = COLORS[particle.colorIndex];
-        
+
         // Save context state
         ctx.save();
-        
+
         // Move to particle position and rotate
         ctx.translate(particle.x, particle.y);
         ctx.rotate(particle.rotation);
-        
+
         // Create elliptical gradient for wispy smoke
         const gradient = ctx.createRadialGradient(
           0,
@@ -122,9 +123,24 @@ export default function CursorTrail() {
 
         // Very soft, wispy smoke effect
         const alpha = opacity * 0.25;
-        gradient.addColorStop(0, `${color}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`);
-        gradient.addColorStop(0.3, `${color}${Math.floor(alpha * 0.6 * 255).toString(16).padStart(2, '0')}`);
-        gradient.addColorStop(0.7, `${color}${Math.floor(alpha * 0.2 * 255).toString(16).padStart(2, '0')}`);
+        gradient.addColorStop(
+          0,
+          `${color}${Math.floor(alpha * 255)
+            .toString(16)
+            .padStart(2, "0")}`
+        );
+        gradient.addColorStop(
+          0.3,
+          `${color}${Math.floor(alpha * 0.6 * 255)
+            .toString(16)
+            .padStart(2, "0")}`
+        );
+        gradient.addColorStop(
+          0.7,
+          `${color}${Math.floor(alpha * 0.2 * 255)
+            .toString(16)
+            .padStart(2, "0")}`
+        );
         gradient.addColorStop(1, `${color}00`);
 
         // Draw elongated ellipse for wisp effect
@@ -132,7 +148,7 @@ export default function CursorTrail() {
         ctx.beginPath();
         ctx.ellipse(0, 0, particle.sizeX, particle.sizeY, 0, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Restore context state
         ctx.restore();
 

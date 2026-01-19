@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'light-green-bg': '#c8ffc3',
-        'green-line': '#3dbf44',
+        "light-green-bg": "#c8ffc3",
+        "green-line": "#3dbf44",
       },
       borderRadius: {
-        'square': '32px',
+        square: "32px",
       },
     },
   },

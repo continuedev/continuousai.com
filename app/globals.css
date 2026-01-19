@@ -52,7 +52,9 @@ body {
   padding: 0px 1px;
   padding-right: 0px;
   z-index: 1;
-  transition: text-decoration-color 0.3s ease, padding-right 0.3s ease;
+  transition:
+    text-decoration-color 0.3s ease,
+    padding-right 0.3s ease;
 }
 
 .animated-link::before {
@@ -80,7 +82,10 @@ body {
   vertical-align: middle;
   opacity: 0;
   transform: translateY(-0.1em) translateX(-4px);
-  transition: opacity 0.4s ease, transform 0.4s ease, width 0.4s ease,
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    width 0.4s ease,
     margin-left 0.4s ease;
 }
 
@@ -106,7 +111,9 @@ body {
   padding: 0px 1px;
   padding-right: 0px;
   z-index: 1;
-  transition: text-decoration-color 0.3s ease, padding-right 0.3s ease;
+  transition:
+    text-decoration-color 0.3s ease,
+    padding-right 0.3s ease;
 }
 
 .animated-anchor::before {
@@ -134,7 +141,10 @@ body {
   vertical-align: middle;
   opacity: 0;
   transform: translateY(-0.1em) translateX(-4px);
-  transition: opacity 0.4s ease, transform 0.4s ease, width 0.4s ease,
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    width 0.4s ease,
     margin-left 0.4s ease;
 }
 

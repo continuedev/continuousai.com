@@ -3,7 +3,7 @@ echo "Starting Pre-commit Checks..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 echo "┌─ 📦 Checking Staged Files (Format & Lint)"
-if npx lint-staged
+if npx lint-staged; then
   echo "└─ Staged files look good!"
 else
   echo "└─ Code quality checks failed on staged files."
@@ -13,7 +13,7 @@ fi
 echo ""
 
 echo "┌─ Checking TypeScript Types"
-if npm run type-check
+if npm run type-check; then
   echo "└─ No type errors found"
 else
   echo "└─ TypeScript Check Failed. Please fix type errors."
@@ -23,7 +23,7 @@ fi
 echo ""
 
 echo "┌─ Running Tests"
-if npm test
+if npm test; then
   echo "└─ Tests Passed"
 else
   echo "└─ Tests Failed."
