@@ -1,0 +1,17 @@
+echo ""
+echo "Starting Pre-push Checks..."
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+echo "┌─ 🏗️  Verifying Production Build"
+echo "│  Running 'npm run build' to ensure strict linting and type safety..."
+if npm run build
+  echo "└─ Build Successful"
+else
+  echo "└─ Build Failed. Push aborted."
+  echo "│  Please fix the build errors before pushing."
+  exit 1
+fi
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✨ Ready to push!"
+echo ""
