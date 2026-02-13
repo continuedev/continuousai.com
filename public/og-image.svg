@@ -1,0 +1,240 @@
+<svg width="100%" height="100%" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.03"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="overlay"/>
+    </filter>
+    
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+  
+  <style>
+    @keyframes heartbeat {
+      0%, 100% { transform: scaleY(1); }
+      7% { transform: scaleY(1.2); }
+      14% { transform: scaleY(1); }
+      21% { transform: scaleY(1.45); }
+      35% { transform: scaleY(1); }
+    }
+    
+    @keyframes breathe-out {
+      0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+      7% { transform: translateY(-5px) scaleY(1.05); opacity: 0.65; }
+      14% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+      21% { transform: translateY(-12px) scaleY(1.12); opacity: 0.8; }
+      35% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+    }
+    
+    @keyframes breathe-in {
+      0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+      7% { transform: translateY(5px) scaleY(1.05); opacity: 0.65; }
+      14% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+      21% { transform: translateY(12px) scaleY(1.12); opacity: 0.8; }
+      35% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+    }
+    
+    @keyframes fade-pulse {
+      0%, 100% { opacity: 0.15; }
+      7% { opacity: 0.25; }
+      14% { opacity: 0.15; }
+      21% { opacity: 0.4; }
+      35% { opacity: 0.15; }
+    }
+    
+    .core { 
+      animation: heartbeat 1s ease-in-out infinite;
+      transform-origin: center center;
+      transform-box: fill-box;
+    }
+    .breathe-up {
+      animation: breathe-out 1s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .breathe-down {
+      animation: breathe-in 1s ease-in-out infinite;
+      transform-origin: center top;
+    }
+    .fade-band {
+      animation: fade-pulse 1s ease-in-out infinite;
+    }
+  </style>
+  
+  <!-- MACRO - distant echoes -->
+  <g class="fade-band" style="animation-delay: 0.2s;">
+    <rect x="0" y="50" width="1200" height="1" fill="#0d0d0e"/>
+    <rect x="0" y="580" width="1200" height="1" fill="#0d0d0e"/>
+  </g>
+  
+  <g class="fade-band" style="animation-delay: 0.18s;">
+    <rect x="0" y="90" width="1200" height="1" fill="#101011"/>
+    <rect x="0" y="540" width="1200" height="1" fill="#101011"/>
+  </g>
+  
+  <g class="fade-band" style="animation-delay: 0.15s;">
+    <rect x="0" y="125" width="1200" height="1" fill="#131314"/>
+    <rect x="0" y="505" width="1200" height="1" fill="#131314"/>
+  </g>
+  
+  <!-- LARGE SCALE - fragmenting bands, upper -->
+  <g class="breathe-up" style="animation-delay: 0.12s;">
+    <rect x="0" y="155" width="450" height="1" fill="#161617"/>
+    <rect x="480" y="155" width="380" height="1" fill="#171718"/>
+    <rect x="890" y="155" width="310" height="1" fill="#161617"/>
+  </g>
+  
+  <!-- LARGE SCALE - fragmenting bands, lower -->
+  <g class="breathe-down" style="animation-delay: 0.12s;">
+    <rect x="0" y="475" width="400" height="1" fill="#161617"/>
+    <rect x="430" y="475" width="420" height="1" fill="#171718"/>
+    <rect x="880" y="475" width="320" height="1" fill="#161617"/>
+  </g>
+  
+  <!-- MEDIUM SCALE - coalescing, upper -->
+  <g class="breathe-up" style="animation-delay: 0.09s;">
+    <rect x="0" y="185" width="550" height="1" fill="#1a1b1a"/>
+    <rect x="580" y="185" width="400" height="1" fill="#1b1c1b"/>
+    <rect x="1010" y="185" width="190" height="1" fill="#1a1b1a"/>
+    
+    <rect x="0" y="190" width="600" height="1" fill="#1c1d1c"/>
+    <rect x="630" y="190" width="350" height="1" fill="#1b1c1b"/>
+    <rect x="1010" y="190" width="190" height="1" fill="#1c1d1c"/>
+  </g>
+  
+  <!-- MEDIUM SCALE - coalescing, lower -->
+  <g class="breathe-down" style="animation-delay: 0.09s;">
+    <rect x="0" y="440" width="520" height="1" fill="#1a1b1a"/>
+    <rect x="550" y="440" width="430" height="1" fill="#1b1c1b"/>
+    <rect x="1010" y="440" width="190" height="1" fill="#1a1b1a"/>
+    
+    <rect x="0" y="445" width="580" height="1" fill="#1c1d1c"/>
+    <rect x="610" y="445" width="370" height="1" fill="#1b1c1b"/>
+    <rect x="1010" y="445" width="190" height="1" fill="#1c1d1c"/>
+  </g>
+  
+  <!-- SMALL SCALE - tighter, upper -->
+  <g class="breathe-up" style="animation-delay: 0.06s;">
+    <rect x="0" y="215" width="700" height="2" fill="#1e1f1e"/>
+    <rect x="730" y="215" width="470" height="2" fill="#1d1e1d"/>
+    
+    <rect x="0" y="222" width="750" height="1" fill="#1f201f"/>
+    <rect x="780" y="222" width="420" height="1" fill="#1e1f1e"/>
+  </g>
+  
+  <!-- SMALL SCALE - tighter, lower -->
+  <g class="breathe-down" style="animation-delay: 0.06s;">
+    <rect x="0" y="413" width="680" height="2" fill="#1e1f1e"/>
+    <rect x="710" y="413" width="490" height="2" fill="#1d1e1d"/>
+    
+    <rect x="0" y="408" width="720" height="1" fill="#1f201f"/>
+    <rect x="750" y="408" width="450" height="1" fill="#1e1f1e"/>
+  </g>
+  
+  <!-- FINE SCALE - green emerging, upper -->
+  <g class="breathe-up" style="animation-delay: 0.04s;">
+    <rect x="0" y="245" width="850" height="2" fill="#1a1f0a"/>
+    <rect x="880" y="245" width="320" height="2" fill="#191e09"/>
+    
+    <rect x="0" y="252" width="900" height="2" fill="#1c240b"/>
+    <rect x="930" y="252" width="270" height="2" fill="#1b220a"/>
+  </g>
+  
+  <!-- FINE SCALE - green emerging, lower -->
+  <g class="breathe-down" style="animation-delay: 0.04s;">
+    <rect x="0" y="383" width="830" height="2" fill="#1a1f0a"/>
+    <rect x="860" y="383" width="340" height="2" fill="#191e09"/>
+    
+    <rect x="0" y="378" width="880" height="2" fill="#1c240b"/>
+    <rect x="910" y="378" width="290" height="2" fill="#1b220a"/>
+  </g>
+  
+  <!-- MICRO SCALE - almost bound, upper -->
+  <g class="breathe-up" style="animation-delay: 0.02s;">
+    <rect x="0" y="270" width="950" height="3" fill="#1e2a0c"/>
+    <rect x="980" y="270" width="220" height="3" fill="#1d280b"/>
+    
+    <rect x="0" y="278" width="1000" height="3" fill="#20320e"/>
+    <rect x="1030" y="278" width="170" height="3" fill="#1f300d"/>
+  </g>
+  
+  <!-- MICRO SCALE - almost bound, lower -->
+  <g class="breathe-down" style="animation-delay: 0.02s;">
+    <rect x="0" y="357" width="940" height="3" fill="#1e2a0c"/>
+    <rect x="970" y="357" width="230" height="3" fill="#1d280b"/>
+    
+    <rect x="0" y="352" width="990" height="3" fill="#20320e"/>
+    <rect x="1020" y="352" width="180" height="3" fill="#1f300d"/>
+  </g>
+  
+  <!-- THE CORE - the beating continuous line -->
+  <g class="core" transform="translate(0, 315)">
+    
+    <!-- Outer core bands -->
+    <rect x="0" y="-22" width="1050" height="4" fill="#2a3d10"/>
+    <rect x="1080" y="-22" width="120" height="4" fill="#28390f"/>
+    
+    <rect x="0" y="19" width="1030" height="4" fill="#28390f"/>
+    <rect x="1060" y="19" width="140" height="4" fill="#2a3d10"/>
+    
+    <!-- Inner core bands -->
+    <rect x="0" y="-14" width="1100" height="5" fill="#3a5214"/>
+    <rect x="1130" y="-14" width="70" height="5" fill="#384f13"/>
+    
+    <rect x="0" y="10" width="1080" height="5" fill="#384f13"/>
+    <rect x="1110" y="10" width="90" height="5" fill="#3a5214"/>
+    
+    <!-- Near core -->
+    <rect x="0" y="-7" width="1150" height="5" fill="#506a18"/>
+    <rect x="1170" y="-7" width="30" height="5" fill="#4d6617"/>
+    
+    <rect x="0" y="3" width="1140" height="5" fill="#4d6617"/>
+    <rect x="1160" y="3" width="40" height="5" fill="#506a18"/>
+    
+    <!-- THE CONTINUOUS LINE -->
+    <rect x="0" y="-2" width="1200" height="5" fill="#c8ff01"/>
+    
+    <!-- Nano structure - brightness variations within -->
+    <g opacity="0.3">
+      <rect x="40" y="-1" width="100" height="3" fill="#d4ff34"/>
+      <rect x="180" y="-1" width="70" height="3" fill="#dcff55"/>
+      <rect x="300" y="-1" width="120" height="3" fill="#d4ff34"/>
+      <rect x="480" y="-1" width="90" height="3" fill="#dcff55"/>
+      <rect x="620" y="-1" width="140" height="3" fill="#d4ff34"/>
+      <rect x="820" y="-1" width="80" height="3" fill="#dcff55"/>
+      <rect x="950" y="-1" width="110" height="3" fill="#d4ff34"/>
+      <rect x="1100" y="-1" width="70" height="3" fill="#dcff55"/>
+    </g>
+    
+    <!-- Pico scale hints -->
+    <g opacity="0.2">
+      <rect x="60" y="0" width="25" height="1" fill="#e5ff77"/>
+      <rect x="140" y="0" width="18" height="1" fill="#e5ff77"/>
+      <rect x="220" y="0" width="30" height="1" fill="#e5ff77"/>
+      <rect x="340" y="0" width="22" height="1" fill="#e5ff77"/>
+      <rect x="430" y="0" width="28" height="1" fill="#e5ff77"/>
+      <rect x="540" y="0" width="20" height="1" fill="#e5ff77"/>
+      <rect x="650" y="0" width="35" height="1" fill="#e5ff77"/>
+      <rect x="760" y="0" width="24" height="1" fill="#e5ff77"/>
+      <rect x="870" y="0" width="32" height="1" fill="#e5ff77"/>
+      <rect x="980" y="0" width="26" height="1" fill="#e5ff77"/>
+      <rect x="1090" y="0" width="40" height="1" fill="#e5ff77"/>
+    </g>
+    
+  </g>
+  
+  <!-- Vignette -->
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+  
+  <!-- Grain -->
+  <rect width="1200" height="630" filter="url(#grain)" fill="#808080" opacity="0.025"/>
+  
+</svg>

@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #151515;
+  background-color: #0a0a0b;
   overflow: hidden;
   height: 100vh;
   width: 100vw;

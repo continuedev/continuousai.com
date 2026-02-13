@@ -1,47 +1,6 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#F637B3;stop-opacity:1" />
-      <stop offset="33%" style="stop-color:#667AFF;stop-opacity:1" />
-      <stop offset="66%" style="stop-color:#2EA6FF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#89EC9B;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#EB54F6;stop-opacity:1" />
-      <stop offset="33%" style="stop-color:#2EA6FF;stop-opacity:1" />
-      <stop offset="66%" style="stop-color:#31DDED;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#60E6D5;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="flowGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#B25AF6;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#00D2FF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#89EC9B;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Continuous flow lines suggesting movement -->
-  <g transform="translate(16, 16)">
-    <!-- Flow line 1 - outer -->
-    <path d="M -12 0 Q -8 -8, 0 -10 Q 8 -8, 12 0 Q 8 8, 0 10 Q -8 8, -12 0" 
-          stroke="url(#flowGradient1)" 
-          stroke-width="1.5" 
-          stroke-linecap="round" 
-          fill="none"
-          opacity="0.8"/>
-    
-    <!-- Flow line 2 - middle -->
-    <path d="M -10 0 Q -6 -6, 0 -7 Q 6 -6, 10 0 Q 6 6, 0 7 Q -6 6, -10 0" 
-          stroke="url(#flowGradient2)" 
-          stroke-width="1.5" 
-          stroke-linecap="round" 
-          fill="none"/>
-    
-    <!-- Flow line 3 - inner -->
-    <path d="M -8 0 Q -5 -4, 0 -5 Q 5 -4, 8 0 Q 5 4, 0 5 Q -5 4, -8 0" 
-          stroke="url(#flowGradient3)" 
-          stroke-width="1.5" 
-          stroke-linecap="round" 
-          fill="none"
-          opacity="0.9"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
+  <path d="M8 16c0-4.4 3.6-8 8-8M24 16c0 4.4-3.6 8-8 8" stroke="#c8ff00" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="16" cy="8" r="2.5" fill="#c8ff00"/>
+  <circle cx="16" cy="24" r="2.5" fill="#c8ff00"/>
 </svg>

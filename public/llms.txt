@@ -1,0 +1,19 @@
+# Continuous AI
+
+> The practice of developing software with background agents.
+
+## About
+
+Continuous AI is a manifesto and movement around the idea that developers are drowning in AI-generated code. The solution is automating the workflows around code, not just the code itself. The role of the software engineer is shifting from prompting AI to designing processes that run automatically.
+
+Powered by [Continue](https://continue.dev), which enables developers to 'ship as fast as you code'
+
+## Pages
+
+- [Home](https://continuousai.com/): Main manifesto page
+- [Jan 2026 Dinner](https://continuousai.com/jan2026): Gathering of AI coding tools
+
+## Contact
+
+- Website: https://continue.dev
+- GitHub: https://github.com/continuedev
