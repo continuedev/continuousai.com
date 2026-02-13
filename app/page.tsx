@@ -73,9 +73,6 @@ export default function Home() {
         }
 
         @media (max-width: 768px) {
-          .snap-container {
-            scroll-snap-type: y mandatory;
-          }
           .snap-section {
             min-height: 100vh;
             min-height: 100dvh;
@@ -281,7 +278,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full text-[var(--accent)] no-underline font-mono text-sm transition-all duration-300 hover:bg-[var(--accent)] hover:text-[var(--bg)] hover:translate-x-2"
               >
                 AI is Glue
-                <svg className="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <svg className="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
                 <span className="sr-only">(opens in new tab)</span>
@@ -341,7 +338,7 @@ export default function Home() {
           <h2 id="ecosystem-heading" className="text-[clamp(2.5rem,10vw,5.5rem)] font-bold leading-[1.05] mb-6 md:mb-8 font-['Outfit',sans-serif] tracking-[-0.02em]">
             Building <span className="text-[var(--accent)]">Together</span>
           </h2>
-          <p className="text-[clamp(1rem,3vw,1.35rem)] leading-[1.6] md:leading-[1.8] text-[rgba(245,245,245,0.85)] max-w-[700px] mb-4 md:mb-8">
+          <p className="text-[clamp(1rem,3vw,1.35rem)] leading-[1.6] md:leading-[1.8] text-[rgba(245,245,245,0.85)] max-w-[700px] mb-8 md:mb-10">
             The best developer tools are converging around a shared goal: agents that keep pace with code generation, catch issues before and after they ship, and give every engineer the guardrails to move fast with confidence.
           </p>
           <ul className="flex flex-wrap gap-1 md:gap-3 my-3 md:my-10 list-none p-0" aria-label="Partner tools and integrations">
@@ -366,7 +363,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 md:px-6 md:py-3 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full text-[var(--accent)] no-underline font-mono text-sm transition-all duration-300 hover:bg-[var(--accent)] hover:text-[var(--bg)] hover:translate-x-2"
           >
             Jan 2026 Dinner
-            <svg className="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <svg className="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
             <span className="sr-only">(opens in new tab)</span>
@@ -415,7 +412,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 md:px-6 md:py-3 bg-[rgba(200,255,0,0.1)] border border-[rgba(200,255,0,0.3)] rounded-full text-[var(--accent)] no-underline font-mono text-sm transition-all duration-300 hover:bg-[var(--accent)] hover:text-[var(--bg)] hover:translate-x-2"
           >
             Continue
-            <svg className="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <svg className="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
             <span className="sr-only">(opens in new tab)</span>
@@ -442,3 +439,4 @@ export default function Home() {
     </>
   );
 }
+
